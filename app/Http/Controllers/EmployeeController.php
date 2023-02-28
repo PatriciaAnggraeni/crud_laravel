@@ -8,6 +8,8 @@ class EmployeeController extends Controller
 {
     // membuat fungsi index untuk me-return view (tampilan untuk data pegawai)
     public function index() {
-        return "Halo Gan!";
+
+        // return file blade.php dengan nama pegawai
+        return view('pegawai');
     }
 }
