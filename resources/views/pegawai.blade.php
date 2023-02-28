@@ -8,10 +8,49 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    {{-- ganti judul title menjadi "CRUD Menggunakan Laravel 8" --}}
+    <title>CRUD Menggunakan Laravel 8</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+
+    {{-- ganti teks "Hello World" menjadi Data Pegawai --}}
+    <h1 class="text-center mb-5">Data Pegawai</h1>
+
+
+    {{-- buat kode HTML untuk tabel di sini (menggunakan bootstrap) --}}
+    {{-- dan kasih container agar tabel agak ke tengah (tidak terlalu lebar) --}}
+    <div class="container">
+        <div class="row">
+            <table class="table">
+                <thead>
+                  <tr>
+
+                    {{-- samakan nama kolom tabel dengan nama kolom tabel di database --}}
+                    <th scope="col">id</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Jenis Kelamin</th>
+                    <th scope="col">No. Telph</th>
+                    <th scope="col">Alamat</th>
+                    <th scope="col">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td>
+                        {{-- tambahkan tombol untuk melakukan aksi hapus dan edit data pegawai --}}
+                        <button type="button" class="btn btn-danger">Hapus</button>
+                        <button type="button" class="btn btn-primary">Ubah</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
