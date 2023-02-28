@@ -14,9 +14,10 @@ class EmployeeController extends Controller
         $data_pegawai = Employee::all();
 
         // die dump datanya menggunakan fungsi dd()
-        dd($data_pegawai);
+        // dd($data_pegawai);
 
         // return file blade.php dengan nama pegawai
-        return view('pegawai');
+        // lempar aata yang ditangkap dari database ke view pegawai
+        return view('pegawai', compact('data_pegawai'));
     }
 }

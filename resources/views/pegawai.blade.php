@@ -38,18 +38,27 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td>
-                        {{-- tambahkan tombol untuk melakukan aksi hapus dan edit data pegawai --}}
-                        <button type="button" class="btn btn-danger">Hapus</button>
-                        <button type="button" class="btn btn-warning">Ubah</button>
-                    </td>
-                  </tr>
+
+                    {{-- buat anotasi foreach untuk menampilkan data pegawai sesuai dengan jumlahnya (dinamis) --}}
+                    @foreach ($data_pegawai as $data_rows)
+
+                        <tr>
+
+                            {{-- echo di laravel menggunakan kurung kurawal ganda --}}
+                            <th scope="row"> {{ $data_rows->id }} </th>
+                            <td> {{ $data_rows->nama }} </td>
+                            <td> {{ $data_rows->jenis_kelamin }} </td>
+                            <td> {{ $data_rows->no_telph }} </td>
+                            <td> {{ $data_rows->alamat }} </td>
+                            <td>
+                                {{-- tambahkan tombol untuk melakukan aksi hapus dan edit data pegawai --}}
+                                <button type="button" class="btn btn-danger">Hapus</button>
+                                <button type="button" class="btn btn-warning">Ubah</button>
+                            </td>
+                        </tr>
+
+                    @endforeach ()
+
                 </tbody>
               </table>
         </div>
