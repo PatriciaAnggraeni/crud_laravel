@@ -20,6 +20,9 @@
     {{-- buat kode HTML untuk tabel di sini (menggunakan bootstrap) --}}
     {{-- dan kasih container agar tabel agak ke tengah (tidak terlalu lebar) --}}
     <div class="container">
+
+        {{-- membuat tombol untuk tambah data pegawai --}}
+        <button type="button" class="btn btn-success">Tambah +</button>
         <div class="row">
             <table class="table">
                 <thead>
@@ -44,7 +47,7 @@
                     <td>
                         {{-- tambahkan tombol untuk melakukan aksi hapus dan edit data pegawai --}}
                         <button type="button" class="btn btn-danger">Hapus</button>
-                        <button type="button" class="btn btn-primary">Ubah</button>
+                        <button type="button" class="btn btn-warning">Ubah</button>
                     </td>
                   </tr>
                 </tbody>
