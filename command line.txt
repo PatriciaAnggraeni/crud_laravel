@@ -1,0 +1,19 @@
+-> mengubah username dan email github
+
+git config --global user.name = username
+git config --global user.email = emailanda
+
+-> membuat projek laravel baru:
+composer create-project --prefer-dist laravel/laravel=8.* <project>
+
+-> membuat migration dan models di laravel:
+php arisan make:model <nama_class> -mc
+
+-> membuat kolom tabel baru:
+php artisan migrate
+
+-> membuat seeder:
+php artisan make::sedeer <nama_seeder>
+
+-> menambahkan data ke dalam database meggunakan seeder:
+php artisan db:seed --class=<nama_seeder>

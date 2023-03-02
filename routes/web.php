@@ -19,5 +19,8 @@ Route::get('/', function () {
 });
 
 
-// membuat router baru untuk mengakses data pegawai
+// membuat router baru untuk mengakses halaman data pegawai
 Route::get('/data_pegawai', [EmployeeController::class, 'index']);
+
+// membuat router baru untuk mengakses halaman tambah data pegawai
+Route::get('/tambah_data_pegawai', [EmployeeController::class, 'tambah_pegawai']);

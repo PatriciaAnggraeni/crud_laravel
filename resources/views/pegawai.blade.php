@@ -22,7 +22,7 @@
     <div class="container">
 
         {{-- membuat tombol untuk tambah data pegawai --}}
-        <button type="button" class="btn btn-success">Tambah +</button>
+        <button type="button" class="btn btn-success mb-3">Tambah +</button>
         <div class="row">
             <table class="table">
                 <thead>

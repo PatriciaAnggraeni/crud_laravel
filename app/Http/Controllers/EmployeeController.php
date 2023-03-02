@@ -20,4 +20,9 @@ class EmployeeController extends Controller
         // lempar aata yang ditangkap dari database ke view pegawai
         return view('pegawai', compact('data_pegawai'));
     }
+
+    // membuat fungsi index untuk me-return view (tampilan untuk tambah data pegawai)
+    public function tambah_pegawai() {
+        return view('tambahdata');
+    }
 }
