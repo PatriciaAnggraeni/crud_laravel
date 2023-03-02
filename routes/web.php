@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EmployeeController;
+use App\Models\Employee;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,12 +16,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view( 'welcome' );
 });
 
 
 // membuat router baru untuk mengakses halaman data pegawai
-Route::get('/data_pegawai', [EmployeeController::class, 'index']);
+Route::get( '/data_pegawai', [EmployeeController::class, 'index'] ) -> name( 'data_pegawai' );
 
 // membuat router baru untuk mengakses halaman tambah data pegawai
-Route::get('/tambah_data_pegawai', [EmployeeController::class, 'tambah_pegawai']);
+Route::get( '/tambah_data_pegawai', [EmployeeController::class, 'tambah_pegawai'] ) -> name( 'tambah_data_pegawai' );
+
+// membuat router baru untuk mengakses halaman tambah data pegawai (insert)
+Route::post( '/masukkan_data_pegawai', [EmployeeController::class, 'masuk_data_pegawai'] ) -> name( 'masukkan_data_pegawai' );

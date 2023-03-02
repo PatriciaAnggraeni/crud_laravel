@@ -27,10 +27,13 @@
 
             {{-- atur banyaknya kolom dengan class col-5 --}}
             <div class="card col-5">
-
                 <div class="card-body">
 
-                    <form>
+                    {{-- beri action ke halaman insert data dan isi method dengan POST --}}
+                    <form action="masukkan_data_pegawai" method="POST">
+
+                        {{-- lalu wajib menambahkan token --}}
+                        @csrf
 
                         <div class="form-group">
                           <label for="nama"">Nama Pegawai</label>
@@ -40,16 +43,16 @@
                         {{-- untuk inputan jenis kelamin menggunakan tag option --}}
                         <div class="form-group">
                             <label for="jenis-kelamin">Jenis Kelamin</label>
-                            <select name="jenis-kelamin" class="form-select" aria-label="Default select example" id="jenis-kelamin">
+                            <select name="jenis_kelamin" class="form-select" aria-label="Default select example" id="jenis-kelamin">
                                 <option selected>--Pilih Jenis Kelamin--</option>
-                                <option value="laki laki">laki laki</option>
+                                <option value="laki">laki</option>
                                 <option value="perempuan">perempuan</option>
                               </select>
                         </div>
 
                         <div class="form-group">
                             <label for="no-telph">No Telphone</label>
-                            <input name="no-telph" type="number" class="form-control" id="no-telph">
+                            <input name="no_telph" type="number" class="form-control" id="no-telph">
                         </div>
 
                         <div class="form-group">
@@ -60,13 +63,9 @@
                         <button type="submit" class="btn btn-primary mt-3">Submit</button>
 
                       </form>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model
 {
     use HasFactory;
+
+    // membuat variabel spesial $guarded agar semua data pegawai bisa dimasukkan ke database
+    protected $guarded = [];
 }

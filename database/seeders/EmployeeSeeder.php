@@ -15,11 +15,11 @@ class EmployeeSeeder extends Seeder
     public function run()
     {
         // memgisi data yang akan di simpan ke dalam database dengan nama tabel pegawai
-        DB::table('employees') -> insert( [
+        DB::table( 'employees' ) -> insert( [
             'nama' => 'Patria Anggara',
             'jenis_kelamin' => 'laki',
             'no_telph' => '088190873412',
-            'Alamat' => 'Jalan Garuda No. 100'
-        ]);
+            'alamat' => 'Jalan Garuda No. 100'
+        ] );
     }
 }
