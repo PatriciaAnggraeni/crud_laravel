@@ -13,5 +13,5 @@ class Employee extends Model
     protected $guarded = [];
 
     // mengatur format tanggal di laravel
-    protected $dates = ['created_at'];
+    // protected $dates = ['created_at'];
 }

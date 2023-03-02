@@ -55,7 +55,10 @@
 
                             {{-- bisa juga mengatur format tampilan waktu --}}
                             {{-- note: akan muncul error jika data pada salah satu kolom bernilai null --}}
-                            <td> {{ $data_rows->created_at -> format('D M Y') }} </td>
+                            {{-- <td> {{ $data_rows->created_at -> format('D M Y') }} </td> --}}
+
+                            {{-- menggunakan method diffForHumans() --}}
+                            <td> {{ $data_rows->created_at -> diffForHumans() }} </td>
                             <td>
                                 {{-- tambahkan tombol untuk melakukan aksi hapus dan edit data pegawai --}}
                                 <button type="button" class="btn btn-danger">Hapus</button>
