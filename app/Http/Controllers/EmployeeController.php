@@ -35,7 +35,8 @@ class EmployeeController extends Controller
         Employee::create( $request -> all() );
 
         // jika sudah atau berhasil mengisi data, maka kembalika ke halaman data pegawai
-        return redirect() -> route( 'data_pegawai' );
+        // tambahkan pesan jika data berhasil diinput
+        return redirect() -> route( 'data_pegawai' ) -> with('berhasil', 'Data Berhasil Ditambahkan!');
 
     }
 }

@@ -26,6 +26,19 @@
         <a href="tambah_data_pegawai" class="btn btn-success mb-3">Tambah +</a>
 
         <div class="row">
+
+            {{-- buat kondisi jika pesan menerima sebuah seesion --}}
+            @if ( $pesan = Session::get('berhasil') )
+
+                {{-- taruh alert di sini --}}
+                <div class="alert alert-success mt-3" role="alert">
+                    {{-- tampilkan pesannya --}}
+                    <b> {{ $pesan }} </b>
+                </div>
+
+             @endif
+
+
             <table class="table">
                 <thead>
                   <tr>
