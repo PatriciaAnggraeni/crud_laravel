@@ -11,4 +11,7 @@ class Employee extends Model
 
     // membuat variabel spesial $guarded agar semua data pegawai bisa dimasukkan ke database
     protected $guarded = [];
+
+    // mengatur format tanggal di laravel
+    protected $dates = ['created_at'];
 }
