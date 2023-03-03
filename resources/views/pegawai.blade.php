@@ -38,7 +38,6 @@
 
              @endif
 
-
             <table class="table">
                 <thead>
                   <tr>
@@ -75,7 +74,7 @@
                             <td>
                                 {{-- tambahkan tombol untuk melakukan aksi hapus dan edit data pegawai --}}
                                 <button type="button" class="btn btn-danger">Hapus</button>
-                                <button type="button" class="btn btn-warning">Ubah</button>
+                                <a href="edit_data/{{ $data_rows->id }}" class="btn btn-warning">Ubah</a>
                             </td>
                         </tr>
 

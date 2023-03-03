@@ -39,4 +39,14 @@ class EmployeeController extends Controller
         return redirect() -> route( 'data_pegawai' ) -> with('berhasil', 'Data Berhasil Ditambahkan!');
 
     }
+
+    // membuat method untuk mengambil dan menampilkan data berdasarkan id
+    public function edit_data( $id ) {
+
+        // temukan id berdasarkan data yang diedit
+        $data = Employee::find( $id );
+
+        // die dump data terlebih dahulu
+        dd( $data );
+    }
 }
