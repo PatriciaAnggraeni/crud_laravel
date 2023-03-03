@@ -47,6 +47,9 @@ class EmployeeController extends Controller
         $data = Employee::find( $id );
 
         // die dump data terlebih dahulu
-        dd( $data );
+        // dd( $data );
+
+        // kembalikan nilai yang ditampung dalam variabel data ke view
+        return view( 'editdata', compact('data') );
     }
 }
