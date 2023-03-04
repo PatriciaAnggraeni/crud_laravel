@@ -34,3 +34,6 @@ Route::get( '/edit_data/{id}', [EmployeeController::class, 'edit_data'] ) -> nam
 
 // membuat router baru untuk menampilkan data yang telah dirubah berdasarkan id
 Route::post( '/simpan_perubahan/{id}', [EmployeeController::class, 'simpan_perubahan'] ) -> name( 'simpan_perubahan' );
+
+// membuat router baru untuk menghapus data berdasarkan id
+Route::get( '/hapus_data_pegawai/{id}', [EmployeeController::class, 'hapus_data_pegawai'] ) -> name( 'hapus_data_pegawai' );

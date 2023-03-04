@@ -77,8 +77,8 @@
                             <td> {{ $data_rows->created_at->diffForHumans() }} </td>
                             <td>
                                 {{-- tambahkan tombol untuk melakukan aksi hapus dan edit data pegawai --}}
-                                <button type="button" class="btn btn-danger">Hapus</button>
                                 <a href="/edit_data/{{ $data_rows->id }}" class="btn btn-warning">Ubah</a>
+                                <a href="/hapus_data_pegawai/{{ $data_rows->id }}" class="btn btn-danger">Hapus</a>
                             </td>
                         </tr>
 
