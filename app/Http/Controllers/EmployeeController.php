@@ -28,15 +28,15 @@ class EmployeeController extends Controller
 
     // membuat fungsi untuk melakukan post data dan disimpan ke database
     // buat paramter Request untuk merima masukkan / request
-    public function masuk_data_pegawai(Request $request) {
+    public function masukkan_data_pegawai(Request $request) {
         // dd( $request -> all() );
 
         // lalu buat request dari data yang diminta dan simpan ke database
-        Employee::create( $request -> all() );
+        Employee::create( $request->all() );
 
         // jika sudah atau berhasil mengisi data, maka kembalika ke halaman data pegawai
         // tambahkan pesan jika data berhasil diinput
-        return redirect() -> route( 'data_pegawai' ) -> with('berhasil', 'Data Berhasil Ditambahkan!');
+        return redirect()->route( 'data_pegawai' )->with('berhasil', 'Data Berhasil Ditambahkan!');
 
     }
 
@@ -51,5 +51,20 @@ class EmployeeController extends Controller
 
         // kembalikan nilai yang ditampung dalam variabel data ke view
         return view( 'editdata', compact('data') );
+    }
+
+    // membuat method untuk menyimpan dan menampilkan data yang dirubah
+    // membutuhkan parameter request dan idnya
+    public function simpan_perubahan(Request $request, $id) {
+
+        // find dulu datanya berdasarkan id
+        $data = Employee::find( $id );
+
+        // tampung request yag diterima
+        $data->update( $request->all() );
+
+        // jika data berhasil dirubah, maka redirect langsung ke halaman pegawai
+        // kirimkan pesan bahwa data berhasil diupdate
+        return redirect()->route( 'data_pegawai' )->with( 'berhasil', 'Data Berhasil Di rubah!' );
     }
 }

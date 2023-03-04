@@ -53,13 +53,17 @@
                 </thead>
                 <tbody>
 
+                    @php
+                        $i = 1;
+                    @endphp
+
                     {{-- buat anotasi foreach untuk menampilkan data pegawai sesuai dengan jumlahnya (dinamis) --}}
                     @foreach ($data_pegawai as $data_rows)
 
                         <tr>
 
                             {{-- echo di laravel menggunakan kurung kurawal ganda --}}
-                            <th scope="row"> {{ $data_rows->id }} </th>
+                            <th scope="row"> {{ $i }} </th>
                             <td> {{ $data_rows->nama }} </td>
                             <td> {{ $data_rows->jenis_kelamin }} </td>
                             <td> {{ $data_rows->no_telph }} </td>
@@ -70,13 +74,17 @@
                             {{-- <td> {{ $data_rows->created_at -> format('D M Y') }} </td> --}}
 
                             {{-- menggunakan method diffForHumans() --}}
-                            <td> {{ $data_rows->created_at -> diffForHumans() }} </td>
+                            <td> {{ $data_rows->created_at->diffForHumans() }} </td>
                             <td>
                                 {{-- tambahkan tombol untuk melakukan aksi hapus dan edit data pegawai --}}
                                 <button type="button" class="btn btn-danger">Hapus</button>
-                                <a href="edit_data/{{ $data_rows->id }}" class="btn btn-warning">Ubah</a>
+                                <a href="/edit_data/{{ $data_rows->id }}" class="btn btn-warning">Ubah</a>
                             </td>
                         </tr>
+
+                        @php
+                            $i++;
+                        @endphp
 
                     @endforeach ()
 

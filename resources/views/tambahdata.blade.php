@@ -30,7 +30,7 @@
                 <div class="card-body">
 
                     {{-- beri action ke halaman insert data dan isi method dengan POST --}}
-                    <form action="masukkan_data_pegawai" method="POST">
+                    <form action="/masukkan_data_pegawai" method="POST">
 
                         {{-- lalu wajib menambahkan token --}}
                         @csrf

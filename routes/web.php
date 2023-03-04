@@ -27,7 +27,10 @@ Route::get( '/data_pegawai', [EmployeeController::class, 'index'] ) -> name( 'da
 Route::get( '/tambah_data_pegawai', [EmployeeController::class, 'tambah_pegawai'] ) -> name( 'tambah_data_pegawai' );
 
 // membuat router baru untuk mengakses halaman tambah data pegawai (insert)
-Route::post( '/masukkan_data_pegawai', [EmployeeController::class, 'masuk_data_pegawai'] ) -> name( 'masukkan_data_pegawai' );
+Route::post( '/masukkan_data_pegawai', [EmployeeController::class, 'masukkan_data_pegawai'] ) -> name( 'masukkan_data_pegawai' );
 
 // membuat router baru untuk menampilkan data berdasarkan id
 Route::get( '/edit_data/{id}', [EmployeeController::class, 'edit_data'] ) -> name( 'edit_data' );
+
+// membuat router baru untuk menampilkan data yang telah dirubah berdasarkan id
+Route::post( '/simpan_perubahan/{id}', [EmployeeController::class, 'simpan_perubahan'] ) -> name( 'simpan_perubahan' );

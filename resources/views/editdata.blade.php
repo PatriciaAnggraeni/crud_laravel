@@ -31,20 +31,20 @@
 
                     {{-- beri action ke halaman insert data dan isi method dengan POST --}}
                     {{-- kosongkan action --}}
-                    <form action="" method="POST">
+                    <form action="/simpan_perubahan/{{ $data->id }}" method="POST">
 
                         {{-- lalu wajib menambahkan token --}}
                         @csrf
 
                         {{-- tambahkan property value, dan isi dengan data yang dikirimkan tadi, lalu ambil nilai dari setiap datanya --}}
                         <div class="form-group">
-                          <label for="nama"">Nama Pegawai</label>
+                          <label for="nama" class="form-label">Nama Pegawai</label>
                           <input name="nama" value="{{ $data->nama }}" type="text" class="form-control" id="nama">
                         </div>
 
                         {{-- untuk inputan jenis kelamin menggunakan tag option --}}
                         <div class="form-group">
-                            <label for="jenis-kelamin">Jenis Kelamin</label>
+                            <label for="jenis-kelamin" class="form-label">Jenis Kelamin</label>
                             <select name="jenis_kelamin" class="form-select" aria-label="Default select example" id="jenis-kelamin">
                                 <option selected>{{ $data->jenis_kelamin }}</option>
                                 <option value="laki">laki</option>
@@ -53,12 +53,12 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="no-telph">No Telphone</label>
+                            <label for="no-telph" class="form-label">No Telphone</label>
                             <input name="no_telph" value="{{ $data->no_telph }}" type="number" class="form-control" id="no-telph">
                         </div>
 
                         <div class="form-group">
-                            <label for="alamat">Alamat</label>
+                            <label for="alamat" class="form-label">Alamat</label>
                             <input name="alamat" value="{{ $data->alamat }}" type="text" class="form-control" id="alamat">
                         </div>
 
