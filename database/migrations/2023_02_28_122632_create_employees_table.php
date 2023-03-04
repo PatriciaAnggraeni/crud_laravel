@@ -17,6 +17,10 @@ class CreateEmployeesTable extends Migration
 
             // membuat kolom tabel baru, untuk kolom id sudah autoincrement
             $table->id();
+
+            // tambahkan table untuk menampung file foto
+            $table->string('foto');
+
             $table->string('nama');
             $table->enum('jenis_kelamin', ['laki', 'perempuan']);
             $table->string('no_telph');

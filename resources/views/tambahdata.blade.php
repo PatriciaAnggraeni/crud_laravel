@@ -30,7 +30,8 @@
                 <div class="card-body">
 
                     {{-- beri action ke halaman insert data dan isi method dengan POST --}}
-                    <form action="/masukkan_data_pegawai" method="POST">
+                    {{-- tambahkan property ectype agar form dapat menerima inputan berupa file --}}
+                    <form action="/masukkan_data_pegawai" method="POST" enctype="multipart/form-data">
 
                         {{-- lalu wajib menambahkan token --}}
                         @csrf
@@ -58,6 +59,12 @@
                         <div class="form-group">
                             <label for="alamat">Alamat</label>
                             <input name="alamat" type="text" class="form-control" id="alamat">
+                        </div>
+
+                        {{-- tambahkan kolom untuk input file gamabr --}}
+                        <div class="form-group">
+                            <label for="foto">Foto</label>
+                            <input name="foto" type="file" class="form-control" id="foto">
                         </div>
 
                         <button type="submit" class="btn btn-primary mt-3">Submit</button>

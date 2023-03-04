@@ -43,7 +43,7 @@
                   <tr>
 
                     {{-- samakan nama kolom tabel dengan nama kolom tabel di database --}}
-                    <th scope="col">id</th>
+                    <th scope="col">nomor</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Jenis Kelamin</th>
                     <th scope="col">No. Telph</th>

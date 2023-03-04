@@ -32,7 +32,23 @@ class EmployeeController extends Controller
         // dd( $request -> all() );
 
         // lalu buat request dari data yang diminta dan simpan ke database
-        Employee::create( $request->all() );
+        // Employee::create( $request->all() );
+
+        // tampung semua data yang tekah diambil dari database
+        $data = Employee::create( $request->all() );
+
+        // tambahkan kondisi jika user memasukkan sebuah file (di sini berupa foto)
+        if ( $request->hasFile( 'foto' ) ) {
+
+            // jika user menginputkan gambar, maka pindahkan gambar tersebut di sutau folder dengan nama aslis dari file gambasr tersebut
+            $request->file('foto')->move('foto_pegawai/', $request->file('foto')->getClientOriginalName());
+
+            // jika gamabr sudah berhasil didapatkan, ambil nama dari file gambar tersebut
+            $data->foto = $request->file('foto')->getClientOriginalName();
+
+            // lalu simpan gambarnya ke dalam database
+            $data->save();
+        }
 
         // jika sudah atau berhasil mengisi data, maka kembalika ke halaman data pegawai
         // tambahkan pesan jika data berhasil diinput

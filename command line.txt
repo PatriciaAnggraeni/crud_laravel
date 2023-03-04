@@ -17,3 +17,6 @@ php artisan make::sedeer <nama_seeder>
 
 -> menambahkan data ke dalam database meggunakan seeder:
 php artisan db:seed --class=<nama_seeder>
+
+-> memperbarui / refresh tabel di database
+php artisan migrate:fresh
