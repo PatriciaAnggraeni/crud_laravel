@@ -43,7 +43,8 @@
                   <tr>
 
                     {{-- samakan nama kolom tabel dengan nama kolom tabel di database --}}
-                    <th scope="col">nomor</th>
+                    <th scope="col">Nomor</th>
+                    <th scope="col">Foto</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Jenis Kelamin</th>
                     <th scope="col">No. Telph</th>
@@ -64,6 +65,13 @@
 
                             {{-- echo di laravel menggunakan kurung kurawal ganda --}}
                             <th scope="row"> {{ $i }} </th>
+
+                            <td>
+                                {{-- menampilkan gambar sesuai dengan nama file yang diterima --}}
+                                {{-- fungsi asset akan mengarah ke folder public --}}
+                                <img src="{{ asset('foto_pegawai/'.$data_rows->foto) }}" alt="" width="100px">
+                            </td>
+
                             <td> {{ $data_rows->nama }} </td>
                             <td> {{ $data_rows->jenis_kelamin }} </td>
                             <td> {{ $data_rows->no_telph }} </td>
