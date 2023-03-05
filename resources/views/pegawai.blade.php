@@ -86,7 +86,9 @@
                             <td>
                                 {{-- tambahkan tombol untuk melakukan aksi hapus dan edit data pegawai --}}
                                 <a href="/edit_data/{{ $data_rows->id }}" class="btn btn-warning">Ubah</a>
-                                <a href="/hapus_data_pegawai/{{ $data_rows->id }}" class="btn btn-danger">Hapus</a>
+
+                                {{-- tambahkan properti data-id untuk mengambil id dari data pegawai --}}
+                                <a href="#" class="btn btn-danger hapus-data" data-id="{{ $data_rows->id }}" data-nama="{{ $data_rows->nama }}">Hapus</a>
                             </td>
                         </tr>
 
@@ -111,6 +113,16 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
+
+    {{-- tambahkan JQuery CDN --}}
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+
+    {{-- menambahkan sweetalert (dialog konfirmasi) --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    {{-- hubungkan file js sweetalert dengan view pegawai --}}
+    <script src="{{ asset('js/sweetalert.js') }}"></script>
+
 
   </body>
 </html>
