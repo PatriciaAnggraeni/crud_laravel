@@ -26,12 +26,12 @@
         <a href="tambah_data_pegawai" class="btn btn-success mb-3">Tambah +</a>
 
         {{-- membuat kolom search berdasarkan nama pegawai --}}
-        <div class="row g-3 align-items-center" >
-            <div class="col-auto" >
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
 
                 {{-- membuat form untuk melakukan request, yaitu mengambil data berdasarkan asil pencarian --}}
                 <form action="/data_pegawai" method="GET">
-                    <input type="search" name="search" id="input-search" class="form-control" placeholder="Cari data pegawai...">
+                    <input type="search" id="search-data" name="search" class="form-control" placeholder="Cari nama pegawai...">
                 </form>
             </div>
         </div>

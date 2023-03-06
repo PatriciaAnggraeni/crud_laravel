@@ -21,7 +21,18 @@ class EmployeeController extends Controller
         // lempar aata yang ditangkap dari database ke view pegawai
 
         // membuat pagination untuk menampilkan data sesuai kehendak user
-        $data_pegawai = Employee::paginate(3);
+        // $data_pegawai = Employee::paginate(3);
+
+        // membuat kolom search untuk data pegawai
+        if ( $request->has('search')) { // jika request menangkap request berupa 'search'
+
+            // cari data berdasarkan nama yang dicari
+            $data_pegawai = Employee::where('nama', 'LIKE', '%' .$request->search. '%')->paginate(3);
+        } else {
+
+            // jika tidak, tampilkan semua data
+            $data_pegawai = Employee::paginate(3);
+        }
 
         return view( 'pegawai', compact('data_pegawai') );
     }
