@@ -7,7 +7,7 @@ git config --global user.email = emailanda
 composer create-project --prefer-dist laravel/laravel=8.* <project>
 
 -> membuat migration dan models di laravel:
-php arisan make:model <nama_class> -mc
+php artisan make:model <nama_class> -mc atau -msc
 
 -> membuat kolom tabel baru:
 php artisan migrate
@@ -20,3 +20,9 @@ php artisan db:seed --class=<nama_seeder>
 
 -> memperbarui / refresh tabel di database
 php artisan migrate:fresh
+
+-> mengedit kolom tabel
+Schema::table('nama_tabel', function(Blueprint $table) {} );
+
+-> mengahapus tabel jika data tidak berhasil dirubah
+$table->dropTable

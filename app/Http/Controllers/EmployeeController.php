@@ -4,20 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller
 {
     // membuat fungsi index untuk me-return view (tampilan untuk data pegawai)
-    public function index() {
+    public function index(Request $request) {
 
         // mengambil semua data di tabel employee
-        $data_pegawai = Employee::all();
+        // $data_pegawai = Employee::all();
 
         // die dump datanya menggunakan fungsi dd()
         // dd($data_pegawai);
 
         // return file blade.php dengan nama pegawai
         // lempar aata yang ditangkap dari database ke view pegawai
+
+        // membuat pagination untuk menampilkan data sesuai kehendak user
+        $data_pegawai = Employee::paginate(3);
+
         return view( 'pegawai', compact('data_pegawai') );
     }
 

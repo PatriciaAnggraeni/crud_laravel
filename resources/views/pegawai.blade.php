@@ -25,6 +25,17 @@
         {{-- ganti tag buton dengan tag a, aarahkan link ke tambah data pegawai --}}
         <a href="tambah_data_pegawai" class="btn btn-success mb-3">Tambah +</a>
 
+        {{-- membuat kolom search berdasarkan nama pegawai --}}
+        <div class="row g-3 align-items-center" >
+            <div class="col-auto" >
+
+                {{-- membuat form untuk melakukan request, yaitu mengambil data berdasarkan asil pencarian --}}
+                <form action="/data_pegawai" method="GET">
+                    <input type="search" name="search" id="input-search" class="form-control" placeholder="Cari data pegawai...">
+                </form>
+            </div>
+        </div>
+
         <div class="row">
 
             {{-- buat kondisi jika pesan menerima sebuah seesion --}}
@@ -32,11 +43,11 @@
 
                 {{-- taruh alert di sini --}}
                 <div class="alert alert-success mt-3" role="alert">
-                    {{-- tampilkan pesannya --}}
+                    tampilkan pesannya
                     <b> {{ $pesan }} </b>
                 </div>
 
-             @endif
+            @endif
 
             <table class="table">
                 <thead>
@@ -54,17 +65,15 @@
                 </thead>
                 <tbody>
 
-                    @php
-                        $i = 1;
-                    @endphp
-
                     {{-- buat anotasi foreach untuk menampilkan data pegawai sesuai dengan jumlahnya (dinamis) --}}
-                    @foreach ($data_pegawai as $data_rows)
+                    {{-- beri variabel index untuk mengambil index dari data pegawai --}}
+                    @foreach ($data_pegawai as $index => $data_rows)
 
                         <tr>
 
                             {{-- echo di laravel menggunakan kurung kurawal ganda --}}
-                            <th scope="row"> {{ $i }} </th>
+                            {{-- tambahkan index dengan method firstItem() --}}
+                            <th scope="row"> {{ $index + $data_pegawai->firstItem() }} </th>
 
                             <td>
                                 {{-- menampilkan gambar sesuai dengan nama file yang diterima --}}
@@ -92,14 +101,12 @@
                             </td>
                         </tr>
 
-                        @php
-                            $i++;
-                        @endphp
-
                     @endforeach ()
 
                 </tbody>
               </table>
+
+              {{ $data_pegawai->links() }}
         </div>
     </div>
 
@@ -115,14 +122,16 @@
     -->
 
     {{-- tambahkan JQuery CDN --}}
-    <script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+
+    {{-- hubungkan dengan TOASTR CDN js --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     {{-- menambahkan sweetalert (dialog konfirmasi) --}}
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     {{-- hubungkan file js sweetalert dengan view pegawai --}}
     <script src="{{ asset('js/sweetalert.js') }}"></script>
-
 
   </body>
 </html>
