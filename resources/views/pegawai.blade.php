@@ -104,9 +104,17 @@
                     @endforeach ()
 
                 </tbody>
-              </table>
+            </table>
 
-              {{ $data_pegawai->links() }}
+            {{ $data_pegawai->links() }}
+
+            <div class="col-auto">
+
+                 {{-- mmebuat tombol untuk mengeksport data ke pdf --}}
+                <a href="/eksportpdf" class="btn btn-info">Eksport PDF</a>
+
+            </div>
+
         </div>
     </div>
 

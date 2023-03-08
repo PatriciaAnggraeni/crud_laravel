@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller
@@ -111,4 +112,23 @@ class EmployeeController extends Controller
 
         return redirect()->route( 'data_pegawai' )->with( 'berhasil', 'Data Berhasil Dihapus' );
     }
+
+    // membuat method untuk mengeksport data ke pdf
+    public function eksport_to_pdf() {
+
+        // ambil semua data employee
+        $data = Employee::all();
+
+        // kita kirim data pdf ke sebuah view
+        view()->share('data', $data);
+
+        // taruh hasil cetak pdf ke view baru
+        $pdf = Pdf::loadview('datapegawaipdf');
+
+        // lalu return nilai dari permintaan download data pegawai sebagai pdf tadinya
+        // isi nama download-an sesuai keinginan
+        return $pdf->download('data-pegawai.pdf');
+
+    }
+
 }
