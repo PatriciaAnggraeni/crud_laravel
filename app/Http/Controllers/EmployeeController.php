@@ -117,10 +117,10 @@ class EmployeeController extends Controller
     public function eksport_to_pdf() {
 
         // ambil semua data employee
-        $data = Employee::all();
+        $data_pegawai = Employee::all();
 
         // kita kirim data pdf ke sebuah view
-        view()->share('data', $data);
+        view()->share('data_pegawai', $data_pegawai);
 
         // taruh hasil cetak pdf ke view baru
         $pdf = Pdf::loadview('datapegawaipdf');
