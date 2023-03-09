@@ -39,4 +39,6 @@ Route::post('/simpan_perubahan/{id}', [EmployeeController::class, 'simpan_peruba
 Route::get('/hapus_data_pegawai/{id}', [EmployeeController::class, 'hapus_data_pegawai'])->name('hapus_data_pegawai');
 
 // membuat router baru untuk melakukan export pdf
-Route::get('/eksportpdf', [EmployeeController::class, 'eksport_to_pdf'])->name('eks portpdf');
+Route::get('/eksportpdf', [EmployeeController::class, 'eksport_to_pdf'])->name('eksportpdf');
+
+
