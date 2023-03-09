@@ -41,4 +41,5 @@ Route::get('/hapus_data_pegawai/{id}', [EmployeeController::class, 'hapus_data_p
 // membuat router baru untuk melakukan export pdf
 Route::get('/eksportpdf', [EmployeeController::class, 'eksport_to_pdf'])->name('eksportpdf');
 
-
+// membuat router untuk melakukan exposrt excel
+Route::get('/eksportexcel', [EmployeeController::class, 'eksport_to_excel'])->name('eksportexcel');
