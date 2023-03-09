@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\EmployeeExport;
 use Illuminate\Http\Request;
 use App\Models\Employee;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class EmployeeController extends Controller
 {
@@ -129,6 +131,11 @@ class EmployeeController extends Controller
         // isi nama download-an sesuai keinginan
         return $pdf->download('data-pegawai.pdf');
 
+    }
+
+    // membuat method untuk melakukan export ke excel
+    public function eksport_to_excel() {
+        return Excel::download(new EmployeeExport, 'datapegawai.xlsx');
     }
 
 }

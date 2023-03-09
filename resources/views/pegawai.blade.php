@@ -110,8 +110,11 @@
 
             <div class="col-auto">
 
-                 {{-- mmebuat tombol untuk mengeksport data ke pdf --}}
+                {{-- mmebuat tombol untuk mengeksport data ke pdf --}}
                 <a href="/eksportpdf" class="btn btn-info">Eksport PDF</a>
+
+                {{-- mmebuat tombol untuk mengeksport data ke excel --}}
+                <a href="/eksportexcel" class="btn btn-info">Eksport Excel</a>
 
             </div>
 
